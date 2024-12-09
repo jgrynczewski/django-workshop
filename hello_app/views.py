@@ -77,3 +77,11 @@ def third_view(request, param):
     return render(
         request, "hello_app/third.html", {"param": param}
     )
+
+
+def child1_view(request):
+    return render(request, "hello_app/child1.html")
+
+
+def child2_view(request):
+    return render(request, "hello_app/child2.html")

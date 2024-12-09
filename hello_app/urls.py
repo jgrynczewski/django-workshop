@@ -17,4 +17,7 @@ urlpatterns = [
     path("first/", views.first_view, name="first"),
     path("second/", views.second_view, name="second"),
     path("third/<str:param>/", views.third_view, name="third"),
+
+    path("child1/", views.child1_view, name="child1"),
+    path("child2/", views.child2_view, name="child2"),
 ]
