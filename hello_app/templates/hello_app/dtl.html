@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Owoce:</h2>
+    <ul>
+    {% for item in fruits %}
+        <li>{{ item }}</li>
+    {% endfor %}
+    </ul>
+
+    {# {% siodcnw %} #}
+    {% comment %}
+        Wielolinijkowy komentarz dtl
+    {% endcomment %}
+
+    <p>{{ fruits|length }}</p>
+    <p>{{ fruits|join:", " }}</p>
+    <p>{{ fruits|length|add:"2" }}</p>
+    <p>{{ fruits|cut:"a" }}</p>
+    <p>{{ fruits|upper }}</p>
+
+    <p>{{ user.age }}</p>
+    <p>{{ cow1.name }}</p>
+    <p>{{ fruits.0 }}</p>
+
+    {% for item in fruits %}
+        <li>{{ forloop }}</li>
+    {% endfor %}
+</body>
+</html>
