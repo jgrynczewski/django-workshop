@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+    Czy chcesz usunąć task o id {{ task.id }} [{{ task.name }}]
+    <form method="POST">{% csrf_token %}
+        <input type="submit" name="confirm" value="Tak">
+        <a href="{% url 'form_app:task_list_view' %}"><button type="button">Anuluj</button></a>
+    </form>
+</body>
+</html>

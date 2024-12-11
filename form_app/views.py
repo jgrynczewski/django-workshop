@@ -95,3 +95,26 @@ def task_update_view(request, pk):
         return render(request, "form_app/task_update.html", {"task": task})
     else:
         return HttpResponse(status=405)
+
+
+def task_delete_view(request, pk):
+    task = get_object_or_404(Task, id=pk)
+
+    if request.method == "GET":
+        return render(
+            request,
+            "form_app/task_confirm_delete.html",
+            {"task": task}
+        )
+    elif request.method == "POST":
+        data = request.POST
+
+        if 'confirm' in data:
+            task.delete()
+
+            return redirect("form_app:task_list_view")
+
+        return render(request, "form_app/task_confirm_delete.html", {"task": task})
+
+    else:
+        return HttpResponse(status=405)
