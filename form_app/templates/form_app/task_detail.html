@@ -8,5 +8,6 @@
 <body>
     <h2>Zadanie o id {{ task.id }}</h2>
     <p>{{ task }}</p>
+    <a href="{% url 'form_app:task_list_view' %}"><button>Lista zadań</button></a>
 </body>
 </html>

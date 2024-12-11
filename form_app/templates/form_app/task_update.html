@@ -11,5 +11,8 @@
         <input type="text" name="task" placeholder="task" value="{{ task.name }}">
         <input type="submit" value="Zapisz">
     </form>
+    <p>
+        <a href="{% url 'form_app:task_list_view' %}"><button>Lista zadań</button></a>
+    </p>
 </body>
 </html>

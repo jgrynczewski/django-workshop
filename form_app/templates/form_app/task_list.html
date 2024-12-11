@@ -8,8 +8,14 @@
 <body>
     <ol>
         {% for task in tasks %}
-            <li>{{ task }}</li>
+            <li>
+                <a href="{% url 'form_app:task_detail_view' task.id %}">{{ task.name }}</a>
+                <a href="{% url 'form_app:task_update_view' task.id %}"><button>Edytuj</button></a>
+                <a href="{% url 'form_app:task_delete_view' task.id %}"><button>Usuń</button></a>
+            </li>
+
         {% endfor %}
     </ol>
+    <a href="{% url 'form_app:task_create_view' %}"><button>Nowe zadanie</button></a>
 </body>
 </html>
