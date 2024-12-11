@@ -26,4 +26,5 @@ urlpatterns = [
     path("crud/", include("crud_app.urls")),
     path("extras/", include("extras_app.urls")),
     path("accounts/", include("accounts.urls")),
+    path("api/", include("api.urls")),
 ]
