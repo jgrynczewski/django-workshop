@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "forms_and_views_app.apps.FormsAndViewsAppConfig",
     'crud_app.apps.CrudAppConfig',
     'extras_app.apps.ExtrasAppConfig',
+    "accounts.apps.AccountsConfig"
 ]
 
 MIDDLEWARE = [
