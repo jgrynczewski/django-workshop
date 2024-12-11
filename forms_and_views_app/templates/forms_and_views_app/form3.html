@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formularz kontaktowy 3</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Wyślij">
+    </form>
+</body>
+</html>
