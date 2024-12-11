@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <form method="post">{% csrf_token %}
+            <p>Czy jesteś pewien, że chcesz usunąć książkę "{{ object }}"?</p>
+            <input type="submit" value="Potwierdź">
+            <a href="{% url 'crud_app:book_list_view' %}"><button type="button">Anuluj</button></a>
+        </form>
+</body>
+</html>
