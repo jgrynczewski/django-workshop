@@ -5,7 +5,7 @@ import asyncio
 from django.contrib import messages
 from django.shortcuts import render, redirect, HttpResponse
 
-from orm_app import Task
+from orm_app.models import Task
 from forms_and_views_app.models import Message
 
 
@@ -15,7 +15,7 @@ def cookies(request):
     print(request.COOKIES)
     res = HttpResponse("OK")
     res.set_cookie("ciasteczko1", 5)
-    res.set_cookie("ciasteczko2", 10, max_age=1000)  # liczba sekund do wygaśnięcia
+    # res.set_cookie("ciasteczko2", 10, max_age=100)  # liczba sekund do wygaśnięcia
     return res
 
 
