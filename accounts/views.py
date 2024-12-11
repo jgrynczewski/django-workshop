@@ -1,11 +1,18 @@
 from django.shortcuts import render, HttpResponse, redirect
 
 from django.contrib.auth import get_user_model, authenticate, login, logout
+from django.views.decorators.http import require_http_methods
 
 User = get_user_model()
 
 
-# Create your views here.
+def home(request):
+    return render(
+        request,
+        "accounts/home.html",
+    )
+
+
 def register_view(request):
     if request.method == "GET":
         return render(
@@ -29,7 +36,7 @@ def register_view(request):
             password=password1
         )
 
-        return redirect("extras_app:home")
+        return redirect("accounts:home")
 
 
 def login_view(request):
@@ -54,7 +61,13 @@ def login_view(request):
         )
 
         if user:
-            # logowanie
+            # logowanie (mechanizm sesji)
             login(request, user)
 
-        return redirect("extras_app:home")
+        return redirect("accounts:home")
+
+
+@require_http_methods(["POST"])
+def logout_view(request):
+    logout(request)
+    return redirect("accounts:home")
