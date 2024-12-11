@@ -20,7 +20,7 @@ urlpatterns = [
     path('template/hello3/', views.HelloGenericView.as_view(), name='template-hello3'),
     path(
         'template/hello4/',
-        TemplateView.as_view(template_name="class_app/hello.html"),
+        TemplateView.as_view(template_name="forms_and_views_app/hello.html"),
         name='template-hello4'
     ),
 

@@ -49,7 +49,6 @@ def contact2(request):
 
     else:
         form = MessageForm(request.POST)  # bound form
-
         if form.is_valid():
             data = form.cleaned_data
             Message.objects.create(
@@ -63,11 +62,11 @@ def contact2(request):
             )
             return redirect("forms_and_views_app:contact2")
 
-    return render(
-        request,
-        'forms_and_views_app/form2.html',
-        {"form": form}
-    )
+        return render(
+            request,
+            'forms_and_views_app/form2.html',
+            {"form": form}
+        )
 
 
 # Django Model Form (formularz modelu)
@@ -85,6 +84,7 @@ def contact3(request):
         form = MessageModelForm(request.POST)  # bound form
         if form.is_valid():
             form.save()
+
             return redirect("forms_and_views_app:contact3")
 
         return render(
@@ -105,7 +105,6 @@ def hello(request):
 class HelloView(View):
     def get(self, request):
         return HttpResponse("Hello, world!")
-
 
 # A jak z szablonami ?
 # Widok funkcyjny
@@ -242,7 +241,9 @@ class PersonCreateView(View):
 class PersonCreateView2(CreateView):
     # CreateView szuka szablonu person_form.html
     model = Person
-    fields = '__all__'
+    fields = []
+    # domyślny szablon to person_form.html
+    # gdzie person to nazwa modelu snake casem
     # do przekierowania wykorzystuje get_absolute_url
     # można też użyć atrybutu klasowego `success_url`
 
