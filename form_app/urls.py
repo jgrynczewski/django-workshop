@@ -19,4 +19,5 @@ urlpatterns = [
     path("task/update/<int:pk>/", views.task_update_view, name="task_update_view"),
     # D - Delete
     path("task/delete/<int:pk>/", views.task_delete_view, name="task_delete_view"),
+
 ]
